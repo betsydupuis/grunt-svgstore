@@ -269,7 +269,9 @@ module.exports = function (grunt) {
         }
 
         // Add ID to symbol
-        var graphicId = options.prefix + id;
+        var prefixTest = new RegExp('^' + options.prefix);
+
+        var graphicId = options.prefix + id.replace(prefixTest, '');
         $symbol.attr('id', graphicId);
 
         // Extract gradients and pattern
