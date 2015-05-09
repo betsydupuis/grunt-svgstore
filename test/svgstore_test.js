@@ -50,6 +50,17 @@ exports.svgstore = {
     test.done();
   },
 
+  no_duplicate_prefix: function(test){
+
+    test.expect(1);
+
+    var actual = grunt.file.read('tmp/no-duplicate-prefix.svg');
+    var expected = grunt.file.read('test/expected/no-duplicate-prefix.svg');
+    test.equal(actual, expected, 'should add `prefix` to each id');
+
+    test.done();
+  },
+
   with_svg_attr: function(test){
     test.expect(1);
 

@@ -49,6 +49,15 @@ module.exports = function(grunt) {
         }
       },
 
+      noDuplicatePrefix: {
+        options: {
+          prefix: 'icon-'
+        },
+        files: {
+          'tmp/no-duplicate-prefix.svg': ['test/fixtures/icon-codepen.svg']
+        }
+      },
+
       svgattr: {
         options: {
           svg: {
